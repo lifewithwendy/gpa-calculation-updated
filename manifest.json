@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "UCSC GPA Calculator",
+  "version": "1.0.1",
+  "description": "Calculates your GPA, class and per-semester GPA on the UCSC student portal exam results page.",
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://ucsc.cmb.ac.lk/*",
+        "*://*.ucsc.cmb.ac.lk/*"
+      ],
+      "all_frames": true,
+      "js": ["rules.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
